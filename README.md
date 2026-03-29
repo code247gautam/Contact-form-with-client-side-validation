@@ -2,6 +2,9 @@
 
 A professional-level multi-page responsive website built with pure HTML, CSS, and JavaScript. Features real-time validation, LocalStorage persistence, dark mode, and a complete submissions dashboard.
 
+![Screenshot_30-3-2026_04242_127 0 0 1](https://github.com/user-attachments/assets/cf8f4479-a723-490b-ba3c-d2381a206d17)
+
+
 ## Features
 
 ### Contact Form (contact.html)
@@ -16,6 +19,9 @@ A professional-level multi-page responsive website built with pure HTML, CSS, an
 - Duplicate submission prevention
 - Input sanitization for XSS prevention
 
+![Screenshot_30-3-2026_0431_127 0 0 1](https://github.com/user-attachments/assets/f8f79560-ac61-4dff-ac77-5b5c7803e4c2)
+
+
 ### Submissions Dashboard (submissions.html)
 - Display all submissions in responsive card layout
 - Search functionality (filter by name/email)
@@ -26,6 +32,10 @@ A professional-level multi-page responsive website built with pure HTML, CSS, an
 - Real-time data updates
 - Cross-tab synchronization
 - Empty state handling
+
+![Screenshot_30-3-2026_04413_127 0 0 1](https://github.com/user-attachments/assets/1cbc8df6-756f-41e1-a8f3-140f2ed5801c)
+
+
 
 ### UI/UX Features
 - Fully responsive design (mobile + desktop)
@@ -119,4 +129,4 @@ project/
 
 ---
 
-Built with ❤️ using pure HTML, CSS, and JavaScript
+Built with ❤️ By Gautam
