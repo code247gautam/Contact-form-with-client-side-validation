@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="View, search, edit, and manage all contact form submissions in one dashboard">
+    <meta name="theme-color" content="#1e3a8a">
+    <title>Submissions Dashboard - Contact Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Contact Manager</h1>
+            <div class="nav-links">
+                <a href="contact.html">Contact</a>
+                <a href="submissions.html" class="active">Submissions</a>
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="dashboard-header">
+            <h2>Submissions Dashboard</h2>
+            <div class="dashboard-stats">
+                <span id="totalCount" class="stat-badge">0 submissions</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search by name or email..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="sort-controls">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                    <option value="latest">Latest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="name">Name (A-Z)</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="submissionsContainer" class="submissions-grid">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <div class="empty-icon"><i class="fas fa-inbox"></i></div>
+            <h3>No Submissions Yet</h3>
+            <p>Start by submitting a contact form.</p>
+            <a href="contact.html" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Go to Contact Form
+            </a>
+        </div>
+
+        <div id="loadMoreContainer" class="load-more-container" style="display: none;">
+            <button id="loadMoreBtn" class="btn btn-secondary">
+                <i class="fas fa-chevron-down"></i> Load More
+            </button>
+        </div>
+    </main>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Submission</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editForm">
+                <div class="form-group">
+                    <label for="editName">Name</label>
+                    <input type="text" id="editName" required>
+                    <span class="error-message" id="editNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" required>
+                    <span class="error-message" id="editEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="editMessage">Message</label>
+                    <textarea id="editMessage" rows="4" required></textarea>
+                    <span class="error-message" id="editMessageError"></span>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelEdit">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Contact Manager</h3>
+                    <p class="footer-description">A professional contact management system built with modern web technologies.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="submissions.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-check"></i> Real-time Validation</li>
+                        <li><i class="fas fa-check"></i> Auto-save Drafts</li>
+                        <li><i class="fas fa-check"></i> Dark Mode</li>
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Technologies</h4>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-html5"></i> HTML5</li>
+                        <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                        <li><i class="fab fa-js"></i> JavaScript</li>
+                        <li><i class="fas fa-database"></i> LocalStorage</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Contact Manager. Built with <i class="fas fa-heart"></i> By Gautam.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

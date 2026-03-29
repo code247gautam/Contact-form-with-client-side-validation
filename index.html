@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta
+      name="description"
+      content="Professional contact management system with real-time validation, auto-save, and dark mode"
+    />
+    <meta name="theme-color" content="#1e3a8a" />
+    <title>Contact Manager - Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .hero {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(
+          135deg,
+          #1e3a8a 0%,
+          #1e40af 50%,
+          #3b82f6 100%
+        );
+        color: white;
+        border-radius: var(--radius-lg);
+        margin: 2rem 0;
+        box-shadow: var(--shadow-xl);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(251, 191, 36, 0.3) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -5%;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(251, 191, 36, 0.2) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+      .feature-card {
+        background-color: var(--bg-primary);
+        padding: 2rem;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        text-align: center;
+        transition: var(--transition);
+        border-top: 3px solid transparent;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+        border-top-color: var(--secondary-color);
+        background: linear-gradient(
+          to bottom,
+          var(--accent-yellow) 0%,
+          var(--bg-primary) 20%
+        );
+      }
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        filter: drop-shadow(2px 2px 4px rgba(30, 58, 138, 0.2));
+        color: var(--primary-color);
+      }
+      .feature-card:hover .feature-icon {
+        color: var(--secondary-color);
+        transform: scale(1.1);
+        transition: var(--transition);
+      }
+      .feature-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+      .feature-card p {
+        color: var(--text-secondary);
+      }
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">Contact Manager</h1>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="contact.html">Contact</a>
+          <a href="submissions.html">Submissions</a>
+          <button
+            id="darkModeToggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <i class="fas fa-moon icon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="hero">
+        <h1>Advanced Contact Management System</h1>
+        <p>
+          A professional-level project showcasing modern web development skills
+        </p>
+        <div class="cta-buttons">
+          <a
+            href="contact.html"
+            class="btn btn-primary"
+            style="
+              background: linear-gradient(135deg, #fbbf24, #f59e0b);
+              color: #1e3a8a;
+              font-weight: 700;
+              box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+            "
+          >
+            <i class="fas fa-rocket"></i> Get Started
+          </a>
+          <a
+            href="submissions.html"
+            class="btn btn-secondary"
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: white;
+              border: 2px solid rgba(255, 255, 255, 0.3);
+              backdrop-filter: blur(10px);
+            "
+          >
+            <i class="fas fa-chart-line"></i> View Dashboard
+          </a>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Real-time Validation</h3>
+          <p>
+            Instant feedback with inline error messages. No annoying alerts!
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-save"></i></div>
+          <h3>Auto-save Drafts</h3>
+          <p>
+            Never lose your work. Forms auto-save as you type and restore on
+            reload.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-moon"></i></div>
+          <h3>Dark Mode</h3>
+          <p>
+            Easy on the eyes. Toggle between light and dark themes with saved
+            preference.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-search"></i></div>
+          <h3>Search & Filter</h3>
+          <p>
+            Quickly find submissions with powerful search and sort capabilities.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-edit"></i></div>
+          <h3>Edit & Delete</h3>
+          <p>Full CRUD operations. Update or remove submissions with ease.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Fully Responsive</h3>
+          <p>
+            Perfect on any device. Seamless experience from mobile to desktop.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Secure & Safe</h3>
+          <p>Input sanitization and XSS prevention built-in for security.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Lightning Fast</h3>
+          <p>
+            Pure vanilla JavaScript. No frameworks, no dependencies, just speed.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+          <h3>Cross-tab Sync</h3>
+          <p>
+            Changes sync instantly across multiple browser tabs automatically.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="footer-logo">Contact Manager</h3>
+            <p class="footer-description">
+              A professional contact management system built with modern web
+              technologies.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fas fa-envelope"></i> Contact</a
+                >
+              </li>
+              <li>
+                <a href="submissions.html"
+                  ><i class="fas fa-chart-line"></i> Dashboard</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Features</h4>
+            <ul class="footer-links">
+              <li><i class="fas fa-check"></i> Real-time Validation</li>
+              <li><i class="fas fa-check"></i> Auto-save Drafts</li>
+              <li><i class="fas fa-check"></i> Dark Mode</li>
+              <li><i class="fas fa-check"></i> Responsive Design</li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Technologies</h4>
+            <ul class="footer-links">
+              <li><i class="fab fa-html5"></i> HTML5</li>
+              <li><i class="fab fa-css3-alt"></i> CSS3</li>
+              <li><i class="fab fa-js"></i> JavaScript</li>
+              <li><i class="fas fa-database"></i> LocalStorage</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Contact Manager. Built with
+            <i class="fas fa-heart"></i> By Gautam.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
